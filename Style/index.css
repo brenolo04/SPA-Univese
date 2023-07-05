@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* colors */
+  --neutral-colors-white: hsla(0, 0%, 100%, 1);
+  --platform-aliases-texto-base: hsla(240, 7%, 78%, 1);
+  --platform-aliases-ttulos:  hsla(240, 9%, 89%, 1); 
+}
+
+:root {
+  font-size: 62.5%; 
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+button {
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-size: 2.4rem;
+  font-family: 'Roboto', sans-serif;
+  background-image: url(/Assets/homeBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.page {
+  padding: 7rem 4rem;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+nav .links {
+  display: flex;
+  gap: 5rem;
+}
+
+.links a {
+  color: var(--platform-aliases-texto-base);
+  transition: all 700ms;
+}
+
+.links a:hover {
+  font-weight: bold;
+  color: var(--neutral-colors-white);
+}
+
+main {
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  display: grid;
+  height: 100%;
+  color: var(--platform-aliases-texto-base);
+}
+
+#app div {
+  margin-top: 11.3rem;
+  width: 70rem;
+}
+
+#app h1, h2 {
+  font-size: 4.8rem;
+  color: var(--platform-aliases-ttulos);
+}
+
+#app p {
+  margin-top: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 160%; 
+}
+
+#route-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+
+  animation: down-up 2s;
+}
+
+#route-home a {
+  display: block;
+  margin-top: 2.4rem;
+  padding: 1.2rem 3.2rem;
+  width: clamp(15rem, 17.5rem + 10vw, 19.5rem);
+  border: 2px solid var(--neutral-colors-white);
+  border-radius: .5rem;
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--neutral-colors-white);
+
+  transition: all 800ms;
+  animation: down-up 2s 1s forwards;
+  opacity: 0;
+}
+
+#route-home a:hover {
+  color: #02799D;
+  background-color: var(--neutral-colors-white);
+}
+
+#route-universe, #route-explorer {
+  animation: right-left 2.2s;
+}
+
+.home-bg {
+  background-image: url(/Assets/homeBg.png);
+}
+
+.universe-bg {
+  background-image: url(/Assets/universeBg.png);
+}
+
+.explorer-bg {
+  background-image: url(/Assets/explorerBg.png);
+}
+
+@keyframes down-up {
+  from {
+    opacity: 0;
+    transform: translateY(+60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes right-left {
+  from {
+    opacity: 0.5;
+    transform: translateX(+150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
